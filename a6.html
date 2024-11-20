@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
@@ -18,30 +19,43 @@
       });
     });
   </script>
-    <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
-    <script type="text/javascript">
+  <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+  <script type="text/javascript">
     $(window).load(function() {
         $('#slider').nivoSlider();
     });
-    </script>
-<meta name="google-site-verification" content="tGYRPGh5qhRS6t5ctrqfI2OKPp8wKoMq_zIW9Yu41IY" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ED173Y9ZEL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  </script>
 
-  gtag('config', 'G-ED173Y9ZEL');
+  <script>
+    // 當數字輸入框的數字改變時，動態改變#p1的字體大小
+    document.getElementById('a1').addEventListener('input', function() {
+        var num = this.value;  // 取得輸入的數字
+        if (num) {
+            document.getElementById('p1').style.fontSize = num + 'px';  // 設定p1的字體大小
+        } 
+    });
+  </script>
+
+  <meta name="google-site-verification" content="tGYRPGh5qhRS6t5ctrqfI2OKPp8wKoMq_zIW9Yu41IY" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ED173Y9ZEL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ED173Y9ZEL');
+  </script>
+
+<script type="text/javascript">
+  function changeFontSize() {
+    var inputValue = document.getElementById('a1').value;  // 取得輸入的數字
+    var p1 = document.getElementById('p1');  // 找到顯示文字的元素
+    if (inputValue) {
+      p1.style.fontSize = inputValue + 'px';  // 改變字體大小
+    }
+  }
 </script>
-
-
-
-<script>
-
-
-</script>
-
 </head>
 
 <body>
@@ -74,7 +88,7 @@
     <p class="s4">挑戰題(4分)</p>
     <hr>
     <p class="s3">輸入數字：
-    <input id="a1" type="text" class="s2" size="10">
+    <input id="a1" type="number" class="s2" size="5" oninput="changeFontSize()">
     </p>
     <p id="p1" class="s2">生日快樂</p>
 	  
@@ -125,9 +139,3 @@
   </div><!--close main-->	
 </body>
 </html>
-
-
-
-
-
-
